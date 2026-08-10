@@ -19,6 +19,21 @@
     padding: 8px 12px;
 }
 
+#header .search {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+}
+
+#header .search input[type="text"],
+#header .search input[type="search"]{
+    margin: 0 6px 0 0;
+}
+
+#header .search input[type="submit"] {
+    margin: 0;
+}
+
 /* 3. WORK CARDS */
 li.blurb{
     background: #fdfaf5;
@@ -31,22 +46,27 @@ li.blurb{
     margin-bottom: 16px;
 }
 
-li.blurb h4.heading {
-    background: linear-gradient(90deg, #b06060 0%, #d68080 100%);
-    margin: -12px -12px 10px -12px;
-        /* (-) cancels padding, goes edge to edge */
-    padding: 6px 12px;
-    border-radius: 4px 4px 0 0;
-    border-bottom: 1px solid #900000;
+.blurb h4.heading,
+#dashboard .blurb h4.heading,
+#main .blurb h4.heading {
+    background: linear-gradient(90deg, #b06060 0%, #d68080 100%) !important;
+    margin: -12px -12px 10px -12px !important;
+    padding: 6px 12px !important;
+    border-radius: 4px 4px 0 0 !important;
+    border-bottom: 1px solid #900000 !important;
 }
 
-li.blurb h4.heading a {
-    color: #ffffff;
-    font-weight: bold;
+.blurb h4.heading a,
+#dashboard .blurb h4.heading a,
+#main .blurb h4.heading a {
+    color: #ffffff !important;
+    font-weight: bold !important;
 }
 
-li.blurb h4.heading a:visited {
-    color: #f5e0e0;
+.blurb h4.heading a:visited,
+#dashboard .blurb h4.heading a:visited,
+#main .blurb h4.heading a:visited {
+    color: #f5e0e0 !important;
 }
 
 /* 4. BUTTONS AND INTERACTION */
@@ -150,8 +170,17 @@ h2.heading, h3.heading {
     margin-bottom: 12px;
 }
 
-#header h1 a { /* For the logo */
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.3), 0 1px rgba(255,255,255,0.1);
+#header h1 a {
+    color: #ffe8e8;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.15);
+}
+
+#header h1 a:visited {
+    color: #ffe8e8;
+}
+
+#header h1 a:hover {
+    color: #ffffff;
 }
 
 ::selection {
