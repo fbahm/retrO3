@@ -1,4 +1,4 @@
-/* BACKGROUND & PAGE WRAPPER */
+/* 1. BACKGROUND & PAGE WRAPPER */
 #outer {
     background: linear-gradient(180deg, #f9d9d9 0%, #e8a5a5 50%, #d67d7d 100%);
         /* (TOP-BOTTOM, hex top, hex mid, hex bottom) */
@@ -8,7 +8,7 @@
         /* Covers entire viewport */
 }
 
-/* HEADER AND NAVIGATION BAR */
+/* 2. HEADER AND NAVIGATION BAR */
 #header{
     background: linear-gradient(90deg, #900000 0%, #c04040 50%, #900000 100%);
         /* Same use as line4, only horizontal this time */
@@ -19,7 +19,7 @@
     padding: 8px 12px;
 }
 
-/* WORK CARDS */
+/* 3. WORK CARDS */
 li.blurb{
     background: #fdfaf5;
     border: 2px solid #b06060;
@@ -31,7 +31,25 @@ li.blurb{
     margin-bottom: 16px;
 }
 
-/* BUTTONS AND INTERACTION */
+li.blurb h4.heading {
+    background: linear-gradient(90deg, #b06060 0%, #d68080 100%);
+    margin: -12px -12px 10px -12px;
+        /* (-) cancels padding, goes edge to edge */
+    padding: 6px 12px;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #900000;
+}
+
+li.blurb h4.heading a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+li.blurb h4.heading a:visited {
+    color: #f5e0e0;
+}
+
+/* 4. BUTTONS AND INTERACTION */
 input[type="submit"], button { /* Normal state */
     background: linear-gradient(180deg, #ffffff 0%, #f0d5d5 100%);
     border: 1px solid #900000;
@@ -51,7 +69,7 @@ input[type="submit"]:active, button:active { /* Mouse clicking */
     background: linear-gradient(180deg, #e0b5b5 0%, #ffffff 100%);
 }
 
-/* FORM INPUT */
+/* 5. FORM INPUT */
 input[type="text"],
 input[type="search"],
 input[type="password"],
@@ -74,7 +92,24 @@ select:focus {
     outline: none;
 }
 
-/* TEXT AND ACCENTS */
+#header input[type="search"],
+#header input[type="text"] {
+    background: #fdf5f5;
+    border: 1px solid #600000;
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.25);
+    padding: 5px 8px;
+    color: #5a2020;
+}
+
+#header input[type="search"]:focus,
+#header input[type="text"]:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.25), 0 0 4px rgba(255,255,255,0.6);
+} /* Soft glow */
+
+/* 6. TEXT AND ACCENTS */
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
 }
@@ -105,4 +140,76 @@ a:visited {
     background: linear-gradient(180deg, #c04040 0%, #900000 100%);
     border-radius: 6px;
     border: 2px solid #fdfaf5;
+}
+
+h2.heading, h3.heading {
+    color: #900000;
+    font-weight: 600;
+    border-bottom: 2px solid #d68080;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+}
+
+#header h1 a { /* For the logo */
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.3), 0 1px rgba(255,255,255,0.1);
+}
+
+::selection {
+    background: #c04040;
+    color: #ffffff;
+}
+
+/* 7. SIDEBAR */
+#dashboard .primary.navigation {
+    background: #fdfaf5;
+    border: 2px solid #b06060;
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px rgba(100,0,0,0.25);
+    padding: 4px 0;
+    margin-bottom: 16px;
+}
+
+#dashboard .primary.navigation li a {
+    display: block;
+    padding: 8px 14px;
+    color: #700000;
+    text-decoration: none;
+    border-bottom: 1px solid #f0d5f5;
+        /* Acts as divider */
+}
+
+#dashboard .primary.navigation li:last-child a{
+    border-bottom: none;
+}
+
+#dashboard .primary.navigation li a:hover {
+    background: #f0d5d5;
+}
+
+#dashboard .primary.navigation li.current a {
+    background: linear-gradient(90deg, #900000 0%, #c04040 100%);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* 8. Dropdown */
+#header ul.navigation li.dropdown ul.menu {
+    background: #fdfaf5;
+    border: 2px solid #900000;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 2px 4px 8px rgba(100,0,0,0.35);
+    padding: 4px 0;
+    min-width: 180px;
+}
+
+#header ul.navigation li.dropdown ul.menu li a {
+    display: block;
+    padding: 8px 14px;
+    color: #700000;
+    text-decoration: none;
+}
+
+#header ul.navigation li.dropdown ul.menu li a:hover {
+    background: linear-gradient(90deg, #900000 0%, #c04040 100%);
+    color: #ffffff;
 }
