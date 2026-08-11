@@ -34,6 +34,12 @@
     margin: 0;
 }
 
+#header .user,
+#header .user a {
+    color: #ffffff;
+}
+
+
 /* 3. WORK CARDS */
 li.blurb{
     background: #fdfaf5;
@@ -49,14 +55,16 @@ li.blurb{
 .blurb h4.heading,
 #dashboard .blurb h4.heading,
 #main .blurb h4.heading {
-    background: linear-gradient(90deg, #b06060 0%, #d68080 100%) !important;
+    background: linear-gradient(90deg, #900000 0%, #c04040 50%, #900 100%) !important;
     margin: -12px -12px 10px -12px !important;
     padding: 6px 12px !important;
     border-radius: 4px 4px 0 0 !important;
-    border-bottom: 1px solid #900000 !important;
+    border-bottom: 1px solid #fff !important;
 }
 
 .blurb h4.heading a,
+.blurb .datetime,
+.blurb h4.heading,
 #dashboard .blurb h4.heading a,
 #main .blurb h4.heading a {
     color: #ffffff !important;
@@ -66,16 +74,44 @@ li.blurb{
 .blurb h4.heading a:visited,
 #dashboard .blurb h4.heading a:visited,
 #main .blurb h4.heading a:visited {
-    color: #f5e0e0 !important;
+    color: #f0d5d5 !important;
 }
+
+fieldset {
+    display: block;
+    background: #fff;
+    border: 2px solid #700000;
+}
+
+dl, 
+p,
+legend {
+    color: black;
+}
+
+form.verbose legend{
+    background: linear-gradient(180deg, #c04040 0%, #900000 100%);
+    color: #fff;
+    border: 2px solid #600000;
+}
+
+a.tag {
+    color: #c04040;
+}
+
+li.relationships a {
+    background: #f9d9d9;
+    border-radius: 4px;
+}
+
 
 /* 4. BUTTONS AND INTERACTION */
 input[type="submit"], button { /* Normal state */
-    background: linear-gradient(180deg, #ffffff 0%, #f0d5d5 100%);
+    background: linear-gradient(180deg, #c04040 0%, #900000 100%);
     border: 1px solid #900000;
     border-radius: 4px;
     padding: 6px 14px;
-    color: #700000;
+    color: #fff;
     font-weight: bold;
     transition: background 0.1s ease-in;
 }
@@ -87,6 +123,12 @@ input[type="submit"]:hover, button:hover { /* Mouse hovering atop */
 
 input[type="submit"]:active, button:active { /* Mouse clicking */
     background: linear-gradient(180deg, #e0b5b5 0%, #ffffff 100%);
+}
+
+.notice {
+    background: linear-gradient(180deg, #c04040 0%, #900000 100%);
+    border: 1px solid #600000;
+    color: #fff;
 }
 
 /* 5. FORM INPUT */
@@ -171,7 +213,7 @@ h2.heading, h3.heading {
 }
 
 #header h1 a {
-    color: #ffe8e8;
+    color: #fff;
     text-shadow: 1px 1px 0 rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.15);
 }
 
@@ -241,4 +283,67 @@ h2.heading, h3.heading {
 #header ul.navigation li.dropdown ul.menu li a:hover {
     background: linear-gradient(90deg, #900000 0%, #c04040 100%);
     color: #ffffff;
+}
+
+/* 9. TAB TITLES */
+fieldset.listbox,
+.listbox {
+    background: linear-gradient(to bottom, #900, #c04040) !important;
+    border: 2px solid #700 !important;
+    color: #fff;
+}
+
+.listbox .heading,
+.listbox .heading a:visited {
+    margin: 0;
+    color: #fff;
+    padding: 0.25em;
+}
+
+h3.heading {
+    font-weight: 600;
+    border-bottom: 2px solid #fff;
+}
+
+/* 10. DASHBOARD AND BUTTONS */
+#dashboard .current {
+    background: linear-gradient(180deg, #c04040 0%, #900000 100%);
+    color: #fff;
+    border: 1px solid #600000;
+    border-radius: 4px;
+}
+
+#dashboard a,
+#dashboard span {
+    color: black;
+}
+
+#dashboard a:hover {
+    background: linear-gradient(180deg, #fff 0%, #e0b5b5 100%);
+    color: #600000;
+    border: 1px solid #700;
+    border-radius: 4px;
+}
+
+.actions a,
+.actions a:active {
+    background: linear-gradient(180deg, #c04040 0%, #900000 100%);
+    border: 1px solid #600000;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.actions a,
+.actions a:link {
+    background: linear-gradient(180deg, #fff 0%, #e0b5b5 100%);
+    color: #900;
+    border: 1px solid #900;
+    border-radius: 4px;
+}
+
+.current {
+    color: #fff;
+    background: linear-gradient(180deg, #c04040 0%, #900000 100%);
+    border: 1px solid #600000;
+    border-radius: 4px;
 }
