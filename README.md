@@ -1,7 +1,7 @@
 # retrO3
 CSS site skin meant to replicate the look and feel of older Windows devices.
 
-<img width="1247" height="764" alt="image" src="https://github.com/user-attachments/assets/bd20201b-5a5c-449c-af35-2ff1586d0a08" />
+<img width="1428" height="404" alt="image" src="https://github.com/user-attachments/assets/542d2d86-52dd-4b9d-a93c-46adb78ea392" />
 
 
 **Installation**
