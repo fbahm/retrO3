@@ -145,13 +145,25 @@ li.relationships a {
     border-bottom: 1px solid #ffffff;
 }
 
-.comment .icon,
-.index .picture .icon {
+.comment .icon{
     top: 40px;
     margin-top: 24px;
     height: 50px;
     width: 50px;
     border-bottom: 5px solid #c04040;
+}
+
+.index .picture .icon {
+    width: 0px;
+    height: 0px;
+}
+
+.blurb .header {
+    min-height: 0;
+}
+
+.picture .header {
+    border-bottom: transparent;
 }
 
 /* 4. BUTTONS AND INTERACTION */
