@@ -1,19 +1,19 @@
 /* 1. BACKGROUND & PAGE WRAPPER */
 #outer {
+    /* (TOP-BOTTOM, hex top, hex mid, hex bottom) */
     background: linear-gradient(180deg, #f9d9d9 0%, #e0b5b5 50%, #e8a5a5 100%);
-        /* (TOP-BOTTOM, hex top, hex mid, hex bottom) */
+    /* Covers entire viewport */
     min-height: 100vh;
-        /* Covers entire viewport */
 }
 
 /* 2. HEADER AND NAVIGATION BAR */
-#header{
+#header {
+    /* Same use as wrapper, only horizontal this time */
     background: linear-gradient(90deg, #900000 0%, #c04040 50%, #900000 100%);
-        /* Same use as line4, only horizontal this time */
+    /* Top corner rounding */
     border-radius: 8px 8px 0 0;
-        /* Top corner rounding */
     border: 1px solid #600000;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
     padding: 8px 12px;
 }
 
@@ -24,7 +24,7 @@
 }
 
 #header .search input[type="text"],
-#header .search input[type="search"]{
+#header .search input[type="search"] {
     margin: 0 6px 0 0;
 }
 
@@ -38,60 +38,87 @@
     color: #ffffff;
 }
 
-
 /* 3. WORK CARDS */
-li.blurb{
+li.blurb, 
+li.comment {
     background: #fdfaf5;
     border: 2px solid #b06060;
+    /* Soft rounding */
     border-radius: 6px;
-        /* Soft rounding */
-    box-shadow: 2px 2px 6px rgba(100,0,0,0.25);
-        /* 3D feel */
+    /* 3D feel */
+    box-shadow: 2px 2px 6px rgba(100, 0, 0, 0.25);
     padding: 12px;
     margin-bottom: 16px;
+}
+
+.dashboard .own {
+    background: #ffffff;
 }
 
 .blurb h4.heading,
 #dashboard .blurb h4.heading,
 #main .blurb h4.heading {
-    background: linear-gradient(90deg, #900000 0%, #c04040 50%, #900 100%) !important;
-    margin: 0 -12px 10px -12px !important;   /* CHANGED: top margin is now 0, not -12px */
-    padding: 6px 12px !important;
+    background: linear-gradient(90deg, #900000 0%, #c04040 50%, #900000 100%) !important;
+    /* Pulls banner flush to the top and side edges */
+    margin: -12px -12px 10px -12px !important;
+    /* Standard padding, title starts on the left */
+    padding: 8px 12px !important; 
+    /* Resets any forced height from previous steps */
+    min-height: 0 !important;     
     border-radius: 4px 4px 0 0 !important;
-    border-bottom: 1px solid #fff !important;
-    clear: both;   /* NEW: forces the bar to start BELOW any floated icons, not overlap them */
+    border-bottom: 1px solid #ffffff !important;
 }
 
+/* Pushes both user icons and work warning tags below the red header */
+.blurb .icon,
+.blurb .required-tags {
+    /* Moves them 40px from the top edge, clearing the banner */
+    top: 40px !important; 
+    /* Resets previous margins */
+    margin-top: 0 !important; 
+}
+
+/* Pushes the tags to the right so they don't overlap the warning icons */
+.blurb ul.tags {
+    margin-left: 60px !important;
+}
+
+.blurb h4.heading,
 .blurb h4.heading a,
 .blurb .datetime,
-.blurb h4.heading,
 #dashboard .blurb h4.heading a,
-#main .blurb h4.heading a {
+#main .blurb h4.heading a,
+.comment h4.byline, 
+.comment h4.byline a,
+.comment .datetime {
     color: #ffffff !important;
     font-weight: bold !important;
 }
 
 .blurb h4.heading a:visited,
 #dashboard .blurb h4.heading a:visited,
-#main .blurb h4.heading a:visited {
-    color: #f0d5d5 !important;
+#main .blurb h4.heading a:visited,
+.comment h4.byline a:visited {
+    color: #ffffff !important;
+    text-decoration: underline;
+    font-weight: normal;
 }
 
 fieldset {
     display: block;
-    background: #fff;
+    background: #ffffff;
     border: 2px solid #700000;
 }
 
 dl, 
 p,
 legend {
-    color: black;
+    color: #000000;
 }
 
-form.verbose legend{
+form.verbose legend {
     background: linear-gradient(180deg, #c04040 0%, #900000 100%);
-    color: #fff;
+    color: #ffffff;
     border: 2px solid #600000;
 }
 
@@ -105,33 +132,64 @@ li.relationships a {
 }
 
 #header li .dropdown {
-    background: #fff;
+    background: #ffffff;
+}
+
+/* Comments */
+.comment h4.byline {
+    background: linear-gradient(90deg, #900000 0%, #c04040 50%, #900000 100%) !important;
+    margin: -12px -12px 10px -12px !important;
+    padding: 8px 12px; 
+    min-height: 0 !important;     
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #ffffff;
+}
+
+.comment .icon,
+.index .picture .icon {
+    top: 40px;
+    margin-top: 24px;
+    height: 50px;
+    width: 50px;
+    border-bottom: 5px solid #c04040;
 }
 
 /* 4. BUTTONS AND INTERACTION */
-input[type="submit"], button { /* Normal state */
+input[type="submit"], 
+button { 
+    /* Normal state */
     background: linear-gradient(180deg, #c04040 0%, #900000 100%);
     border: 1px solid #900000;
     border-radius: 4px;
     padding: 6px 14px;
-    color: #fff;
+    color: #ffffff;
     font-weight: bold;
     transition: background 0.1s ease-in;
 }
 
-input[type="submit"]:hover, button:hover { /* Mouse hovering atop */
+input[type="submit"]:hover, 
+button:hover { 
+    /* Mouse hovering atop */
     background: linear-gradient(180deg, #ffffff 0%, #e0b5b5 100%);
     cursor: pointer;
 }
 
-input[type="submit"]:active, button:active { /* Mouse clicking */
+input[type="submit"]:active, 
+button:active { 
+    /* Mouse clicking */
     background: linear-gradient(180deg, #e0b5b5 0%, #ffffff 100%);
 }
 
 .notice {
     background: linear-gradient(180deg, #c04040 0%, #900000 100%);
     border: 1px solid #600000;
-    color: #fff;
+    color: #ffffff;
+}
+
+/* Main screen */
+.splash .favorite li:nth-of-type(odd) a{
+    background: #900000;
+    color: #ffffff;
 }
 
 /* 5. FORM INPUT */
@@ -143,12 +201,13 @@ select {
     background: #fdf5f5;
     border: 1px solid #b06060;
     border-radius: 3px;
-    box-shadow: inset 1px 1px 3px rgba(100,0,0,0.2);
+    box-shadow: inset 1px 1px 3px rgba(100, 0, 0, 0.2);
     padding: 5px 8px;
     color: #5a2020;
 }
 
-input[type="text"]:focus, /* Clicked into field */
+/* Clicked into field */
+input[type="text"]:focus, 
 input[type="search"]:focus,
 input[type="password"]:focus,
 textarea:focus,
@@ -162,17 +221,18 @@ select:focus {
     background: #fdf5f5;
     border: 1px solid #600000;
     border-radius: 3px;
-    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.25);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.25);
     padding: 5px 8px;
     color: #5a2020;
 }
 
+/* Soft glow */
 #header input[type="search"]:focus,
 #header input[type="text"]:focus {
     outline: none;
     border-color: #ffffff;
-    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.25), 0 0 4px rgba(255,255,255,0.6);
-} /* Soft glow */
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.25), 0 0 4px rgba(255, 255, 255, 0.6);
+} 
 
 /* 6. TEXT AND ACCENTS */
 body {
@@ -207,7 +267,7 @@ a:visited {
     border: 2px solid #fdfaf5;
 }
 
-h2.heading, h3.heading {
+h2.heading {
     color: #900000;
     font-weight: 600;
     border-bottom: 2px solid #d68080;
@@ -215,9 +275,17 @@ h2.heading, h3.heading {
     margin-bottom: 12px;
 }
 
+h3.heading {
+    color: #900000;
+    font-weight: 600;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+}
+
 #header h1 a {
-    color: #fff;
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.15);
+    color: #ffffff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 #header h1 a:visited {
@@ -238,7 +306,7 @@ h2.heading, h3.heading {
     background: #fdfaf5;
     border: 2px solid #b06060;
     border-radius: 6px;
-    box-shadow: 2px 2px 6px rgba(100,0,0,0.25);
+    box-shadow: 2px 2px 6px rgba(100, 0, 0, 0.25);
     padding: 4px 0;
     margin-bottom: 16px;
 }
@@ -248,11 +316,11 @@ h2.heading, h3.heading {
     padding: 8px 14px;
     color: #700000;
     text-decoration: none;
+    /* Acts as divider */
     border-bottom: 1px solid #f0d5f5;
-        /* Acts as divider */
 }
 
-#dashboard .primary.navigation li:last-child a{
+#dashboard .primary.navigation li:last-child a {
     border-bottom: none;
 }
 
@@ -266,10 +334,9 @@ h2.heading, h3.heading {
     font-weight: bold;
 }
 
-/* 8. Dropdown */
-
-#header .dropdown:hover a{
-    background: linear-gradient(180deg, #fff 0%, #e0b5b5 100%);
+/* 8. DROPDOWN */
+#header .dropdown:hover a {
+    background: linear-gradient(180deg, #ffffff 0%, #e0b5b5 100%);
     color: #700000;
 }
 
@@ -285,62 +352,50 @@ h2.heading, h3.heading {
 /* 9. TAB TITLES */
 fieldset.listbox,
 .listbox {
-    background: linear-gradient(to bottom, #900, #c04040) !important;
-    border: 2px solid #700 !important;
-    color: #fff;
+    background: linear-gradient(to bottom, #900000, #c04040) !important;
+    border: 2px solid #700000 !important;
+    color: #ffffff;
 }
 
 .listbox .heading,
 .listbox .heading a:visited {
     margin: 0;
-    color: #fff;
+    color: #ffffff;
     padding: 0.25em;
 }
 
-h3.heading {
-    font-weight: 600;
-    border-bottom: 2px solid #fff;
-}
-
 /* 10. DASHBOARD AND BUTTONS */
+.current,
 #dashboard .current {
     background: linear-gradient(180deg, #c04040 0%, #900000 100%);
-    color: #fff;
+    color: #ffffff;
     border: 1px solid #600000;
     border-radius: 4px;
 }
 
 #dashboard a,
 #dashboard span {
-    color: black;
+    color: #000000;
 }
 
 #dashboard a:hover {
-    background: linear-gradient(180deg, #fff 0%, #e0b5b5 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #e0b5b5 100%);
     color: #600000;
-    border: 1px solid #700;
+    border: 1px solid #700000;
     border-radius: 4px;
-}
-
-.actions a,
-.actions a:active {
-    background: linear-gradient(180deg, #c04040 0%, #900000 100%);
-    border: 1px solid #600000;
-    border-radius: 4px;
-    color: #fff;
 }
 
 .actions a,
 .actions a:link {
-    background: linear-gradient(180deg, #fff 0%, #e0b5b5 100%);
-    color: #900;
-    border: 1px solid #900;
+    background: linear-gradient(180deg, #ffffff 0%, #e0b5b5 100%);
+    color: #900000;
+    border: 1px solid #900000;
     border-radius: 4px;
 }
 
-.current {
-    color: #fff;
+.actions a:active {
     background: linear-gradient(180deg, #c04040 0%, #900000 100%);
     border: 1px solid #600000;
     border-radius: 4px;
+    color: #ffffff;
 }
